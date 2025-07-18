@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Love ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+    body {
+      font-family: 'Dancing Script', cursive;
+      background: #fff0f5;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .section {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 42px;
+      color: #cc0066;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 1.8;
+      color: #4a0033;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #ff66a3;
+      color: white;
+      font-size: 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e60073;
+    }
+
+    .flower {
+      font-size: 50px;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Rain animation */
+    .rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .drop {
+      position: absolute;
+      width: 2px;
+      height: 10px;
+      background: #cc99cc;
+      animation: fall linear infinite;
+      opacity: 0.4;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+
+    /* Heart animation */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      top: 100%;
+      left: 50%;
+      animation: rise 10s linear infinite;
+      transform: rotate(45deg);
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .teddy-container {
+      margin-top: 30px;
+      animation: popUp 1.5s ease-out forwards;
+    }
+
+    @keyframes popUp {
+      0% { transform: translateY(100px) scale(0); opacity: 0; }
+      100% { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    .teddy {
+      font-size: 80px;
+    }
+
+    .heart-emoji {
+      font-size: 50px;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #777;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="tera-hone-laga-hoon.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Rain & Hearts -->
+  <div class="rain"></div>
+  <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+  <div class="heart" style="left: 40%; animation-delay: 3s;"></div>
+  <div class="heart" style="left: 60%; animation-delay: 5s;"></div>
+  <div class="heart" style="left: 80%; animation-delay: 2s;"></div>
+  <div class="heart" style="left: 30%; animation-delay: 4s;"></div>
+
+  <!-- Section 1: Sorry -->
+  <div class="section active" id="section1">
+    <div class="flower">🌸</div>
+    <p style="margin-top: 20px;">Listen to this song while you read:</p>
+    <div class="audio-player">
+      <iframe
+        src="https://youtube.com/embed/mfEQgoVi7P4?si=YD1zO_otpR4d8MVA" title="YouTube video player"
+        height="100"
+        width="100" 
+      ></iframe>
+    </div>
+    <h1>I’m Truly Sorry, My Love</h1>
+    <p>
+      I know you're hurt — and it breaks me to know I caused that pain.<br><br>
+      I want you to know from the deepest part of my heart: *You were never taken for granted*. Not for a moment.<br>
+      You were never a waste of time — you are my most valuable blessing.<br><br>
+      If I failed to show it in the right way, then I failed you. And I am truly, truly sorry for that.<br><br>
+      You are the reason I smile, the person I dream with, and the only one I want by my side.<br>
+      Please give me a chance to be the reason behind your smile again. 💔
+    </p>
+    <button onclick="nextSection(2)">Click Here to Forgive Me</button>
+  </div>
+    
+
+  <!-- Section 2: I Love You -->
+  <div class="section" id="section2">
+    <div class="flower">💮</div>
+    <h1>Why I Love You</h1>
+    <p>
+      I love you because you're you — perfectly imperfect, and endlessly magical.<br><br>
+      I love how you care so deeply, even when you’re tired. I love how your heart still believes in love, even when it’s been hurt.<br><br>
+      I love the way you laugh, the way your eyes light up when you're passionate, and the way you say my name like it means home.<br><br>
+      I love you because you make me want to be better. Because when you hold my hand, it feels like everything will be okay.<br><br>
+      I love you endlessly — through every fight, every flaw, and every second that we breathe. ❤️
+    </p>
+    <button onclick="nextSection(3)">Thank You For Forgiving Me</button>
+  </div>
+
+  <!-- Section 3: Thank You + Teddy -->
+  <div class="section" id="section3">
+    <div class="flower">🌺</div>
+    <h1>Thank You, My Love!</h1>
+    <p>
+      Thank you for staying when it was easier to leave.<br>
+      Thank you for understanding me when I couldn’t explain myself.<br>
+      Thank you for forgiving me when I hurt you — and for believing in what we share.<br><br>
+      You’re the most precious part of my life, and I promise to hold you tighter, love you louder, and cherish you forever.<br><br>
+      You are my once-in-a-lifetime, and I’ll never stop saying “Thank you” for being mine. 💖
+    </p>
+
+    <div class="teddy-container">
+      <div class="teddy">🧸</div>
+      <div class="heart-emoji">❤️</div>
+      <p style="margin-top:10px;">Here’s a teddy jumping out with love — just for you!</p>
+    </div>
+
+    <div class="footer">Forever yours, always. 💗</div>
+  </div>
+
+  <script>
+    function nextSection(num) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById('section' + num).classList.add('active');
+    }
+
+    // Generate rain drops
+    const rain = document.querySelector('.rain');
+    for (let i = 0; i < 80; i++) {
+      const drop = document.createElement('div');
+      drop.classList.add('drop');
+      drop.style.left = Math.random() * 100 + '%';
+      drop.style.animationDuration = (0.5 + Math.random()) + 's';
+      drop.style.animationDelay = Math.random() * 5 + 's';
+      rain.appendChild(drop);
+    }
+  </script>
+
+</body>
+</html>
